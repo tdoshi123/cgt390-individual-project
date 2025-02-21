@@ -1,8 +1,12 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.content {
+  padding: 2rem;
 }
 
 .logo {
@@ -39,4 +43,51 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 92px); /* Add this to ensure main container spans full height */
+}
+
+.content {
+  flex: 1;
+  padding: 1rem 2rem; /* Reduced top/bottom padding */
+}
+
+.content-header {
+  text-align: left;
+  padding-bottom: 0.5rem;    /* Reduced padding */
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+}
+
+.breadcrumb {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+.content-title {
+  text-align: left;
+  padding-left: 3rem;
+  margin-top: 0.5rem;    
+  margin-bottom: 0.5rem; /* Added to reduce space below title */
+  font-weight: bold;
+  color: #000;
+  font-size: 2rem;
 }
