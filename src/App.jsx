@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Menu from './pages/Menu'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router basename="/individual-project">
+    <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/menu" replace />} />
         <Route path="/menu" element={<Menu />} />
