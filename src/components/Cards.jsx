@@ -5,36 +5,76 @@ import products from '../data/products'
 // Import all images
 const images = {
   // Hot Coffee
-  'caffe-americano': () => import('../assets/images/products/hotcoffee/caffe-americano.jpg'),
-  'cappuccino': () => import('../assets/images/products/hotcoffee/cappuccino.jpg'),
-  'espresso': () => import('../assets/images/products/hotcoffee/espresso.jpg'),
-  'flat-white': () => import('../assets/images/products/hotcoffee/flat-white.jpg'),
-  'caramel-macchiato': () => import('../assets/images/products/hotcoffee/caramel-macchiato.jpg'),
-  'caffe-mocha': () => import('../assets/images/products/hotcoffee/caffe-mocha.jpg'),
+  'caffe-americano': () => import('../assets/images/products/drinks/hotcoffee/caffe-americano.jpg'),
+  'cappuccino': () => import('../assets/images/products/drinks/hotcoffee/cappuccino.jpg'),
+  'espresso': () => import('../assets/images/products/drinks/hotcoffee/espresso.jpg'),
+  'flat-white': () => import('../assets/images/products/drinks/hotcoffee/flat-white.jpg'),
+  'caramel-macchiato': () => import('../assets/images/products/drinks/hotcoffee/caramel-macchiato.jpg'),
+  'caffe-mocha': () => import('../assets/images/products/drinks/hotcoffee/caffe-mocha.jpg'),
   
   // Cold Coffee
-  'cb': () => import('../assets/images/products/coldcoffee/cb.jpg'),
-  'chocolate-cream-cb': () => import('../assets/images/products/coldcoffee/chocolate-cream-cb.jpg'),
-  'pistachio-cream-cb': () => import('../assets/images/products/coldcoffee/pistachio-cream-cb.jpg'),
-  'salted-caramel-cream-cb': () => import('../assets/images/products/coldcoffee/salted-caramel-cream-cb.jpg'),
-  'vanilla-sweet-cream-cb': () => import('../assets/images/products/coldcoffee/vanilla-sweet-cream-cb.jpg'),
+  'cb': () => import('../assets/images/products/drinks/coldcoffee/cb.jpg'),
+  'chocolate-cream-cb': () => import('../assets/images/products/drinks/coldcoffee/chocolate-cream-cb.jpg'),
+  'pistachio-cream-cb': () => import('../assets/images/products/drinks/coldcoffee/pistachio-cream-cb.jpg'),
+  'salted-caramel-cream-cb': () => import('../assets/images/products/drinks/coldcoffee/salted-caramel-cream-cb.jpg'),
+  'vanilla-sweet-cream-cb': () => import('../assets/images/products/drinks/coldcoffee/vanilla-sweet-cream-cb.jpg'),
 
   // Hot Tea
-  'chai-latte': () => import('../assets/images/products/hottea/chai-latte.jpg'),
-  'matcha-latte': () => import('../assets/images/products/hottea/matcha-latte.jpg'),
-  'honey-citrus-mint-tea': () => import('../assets/images/products/hottea/honey-citrus-mint-tea.jpg'),
-  'royal-english-breakfast-tea': () => import('../assets/images/products/hottea/royal-english-breakfast-tea.jpg'),
-  'earl-grey-tea': () => import('../assets/images/products/hottea/earl-grey-tea.jpg'),
-  'chamomile-mint-blossom-tea': () => import('../assets/images/products/hottea/chamomile-mint-blossom-tea.jpg'),
-  'chai-tea': () => import('../assets/images/products/hottea/chai-tea.jpg'),
+  'chai-latte': () => import('../assets/images/products/drinks/hottea/chai-latte.jpg'),
+  'matcha-latte': () => import('../assets/images/products/drinks/hottea/matcha-latte.jpg'),
+  'honey-citrus-mint-tea': () => import('../assets/images/products/drinks/hottea/honey-citrus-mint-tea.jpg'),
+  'royal-english-breakfast-tea': () => import('../assets/images/products/drinks/hottea/royal-english-breakfast-tea.jpg'),
+  'earl-grey-tea': () => import('../assets/images/products/drinks/hottea/earl-grey-tea.jpg'),
+  'chamomile-mint-blossom-tea': () => import('../assets/images/products/drinks/hottea/chamomile-mint-blossom-tea.jpg'),
+  'chai-tea': () => import('../assets/images/products/drinks/hottea/chai-tea.jpg'),
 
   // Cold Tea
-  'iced-chai-latte': () => import('../assets/images/products/coldtea/iced-chai-latte.jpg'),
-  'iced-matcha-latte': () => import('../assets/images/products/coldtea/iced-matcha-latte.jpg'),
-  'iced-royal-english-breakfast-latte': () => import('../assets/images/products/coldtea/iced-royal-english-breakfast-latte.jpg'),
-  'iced-black-tea': () => import('../assets/images/products/coldtea/iced-black-tea.jpg'),
-  'iced-green-tea': () => import('../assets/images/products/coldtea/iced-green-tea.jpg'),
-  'iced-passion-tango-tea': () => import('../assets/images/products/coldtea/iced-passion-tango-tea.jpg'),
+  'iced-chai-latte': () => import('../assets/images/products/drinks/coldtea/iced-chai-latte.jpg'),
+  'iced-matcha-latte': () => import('../assets/images/products/drinks/coldtea/iced-matcha-latte.jpg'),
+  'iced-royal-english-breakfast-latte': () => import('../assets/images/products/drinks/coldtea/iced-royal-english-breakfast-latte.jpg'),
+  'iced-black-tea': () => import('../assets/images/products/drinks/coldtea/iced-black-tea.jpg'),
+  'iced-green-tea': () => import('../assets/images/products/drinks/coldtea/iced-green-tea.jpg'),
+  'iced-passion-tango-tea': () => import('../assets/images/products/drinks/coldtea/iced-passion-tango-tea.jpg'),
+
+  // Refreshers
+  'strawberry-acai-lemonade-refresher': () => import('../assets/images/products/drinks/refreshers/strawberry-acai-lemonade-refresher.jpg'),
+  'mango-dragonfruit-lemonade-refresher': () => import('../assets/images/products/drinks/refreshers/mango-dragonfruit-lemonade-refresher.jpg'),
+  'pink-drink': () => import('../assets/images/products/drinks/refreshers/pink-drink.jpg'),
+  'dragon-drink': () => import('../assets/images/products/drinks/refreshers/dragon-drink.jpg'),
+  'strawberry-acai-refresher': () => import('../assets/images/products/drinks/refreshers/strawberry-acai-refresher.jpg'),
+  'mango-dragonfruit-refresher': () => import('../assets/images/products/drinks/refreshers/mango-dragonfruit-refresher.jpg'),
+
+  // Frappuccino
+
+  // Iced Energy
+
+  // Hot Chocolate, Lemonade, and More
+
+  // Bottled Beverages
+
+  // Breakfast
+  'egg-pesto-mozzarella-sandwich': () => import('../assets/images/products/food/breakfast/egg-pesto-mozzarella-sandwich.jpg'),
+  'sausage-cheddar-egg-sandwich': () => import('../assets/images/products/food/breakfast/sausage-cheddar-egg-sandwich.jpg'),
+  'turkeybacon-cheddar-eggwhite-sandwich': () => import('../assets/images/products/food/breakfast/turkeybacon-cheddar-eggwhite-sandwich.jpg'),
+  'bacon-sausage-egg-wrap': () => import('../assets/images/products/food/breakfast/bacon-sausage-egg-wrap.jpg'),
+  'spinach-feta-eggwhite-wrap': () => import('../assets/images/products/food/breakfast/spinach-feta-eggwhite-wrap.jpg'),
+  'bacon-gruyere-egg-bites': () => import('../assets/images/products/food/breakfast/bacon-gruyere-egg-bites.jpg'),
+  'eggwhite-roastedredpepper-egg-bites': () => import('../assets/images/products/food/breakfast/eggwhite-roastedredpepper-egg-bites.jpg'),
+  'berry-trio-parfait': () => import('../assets/images/products/food/breakfast/berry-trio-parfait.jpg'),
+
+  // Bakery
+
+  // Lunch
+
+  // Treats
+
+  // Snacks
+
+  // Whole Bean
+
+  // VIA Instant
+
+  // Shopping Bag
 }
 
 function Cards({ category, subcategory, showAll }) {

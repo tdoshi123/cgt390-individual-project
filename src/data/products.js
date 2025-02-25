@@ -101,22 +101,78 @@ const products = {
     {
       name: "Iced Passion Tango Tea",
       image: "iced-passion-tango-tea"
-    }
+    },
   ],
-  'Refreshers': [],
+  'Refreshers': [
+    {
+      name: "Strawberry Acai Lemonade Refresher",
+      image: "strawberry-acai-lemonade-refresher"
+    },
+    {
+      name: "Mango Dragonfruit Lemonade Refresher",
+      image: "mango-dragonfruit-lemonade-refresher"
+    },
+    {
+      name: "Pink Drink",
+      image: "pink-drink"
+    },
+    {
+      name: "Dragon Drink",
+      image: "dragon-drink"
+    },
+    {
+      name: "Strawberry Acai Refresher",
+      image: "strawberry-acai-refresher"
+    },
+    {
+      name: "Mango Dragonfruit Refresher",
+      image: "mango-dragonfruit-refresher"
+    },
+  ],
   'Frappuccino': [],
   'Iced Energy': [],
   'Hot Chocolate, Lemonade, and More': [],
   'Bottled Beverages': [],
 
-  // Adding Food categories with empty arrays
-  'Breakfast': [],
+  'Breakfast': [
+    {
+      name: "Egg, Pesto, & Mozzarella Sandwich",
+      image: "egg-pesto-mozzarella-sandwich"
+    },
+    {
+      name: "Sausage, Cheddar, & Egg Sandwich",
+      image: "sausage-cheddar-egg-sandwich"
+    },
+    {
+      name: "Turkey Bacon, Cheddar, & Egg White Sandwich",
+      image: "turkeybacon-cheddar-eggwhite-sandwich"
+    },
+    {
+      name: "Bacon, Sausage, & Egg Wrap",
+      image: "bacon-sausage-egg-wrap"
+    },
+    {
+      name: "Spinach, Feta, & Egg White Wrap",
+      image: "spinach-feta-eggwhite-wrap"
+    },
+    {
+      name: "Bacon, Gruyere, & Egg Bites",
+      image: "bacon-gruyere-egg-bites"
+    },
+    {
+      name: "Egg White, Roasted Red Pepper, & Egg Bites",
+      image: "eggwhite-roastedredpepper-egg-bites"
+    },
+    {
+      name: "Berry Trio Parfait",
+      image: "berry-trio-parfait"
+    },
+  ],
   'Bakery': [],
   'Lunch': [],
   'Treats': [],
   'Snacks': [],
 
-  // Adding At Home Coffee categories with empty arrays
   'Whole Bean': [],
   'VIA Instant': [],
   'Shopping Bag': []
