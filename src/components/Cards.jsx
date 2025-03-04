@@ -152,14 +152,79 @@ function Cards({ category, subcategory, showAll }) {
         </div>
       );
     } else if (category === 'Drinks' && !subcategory) {
+      // Only show drink subcategories
+      const drinkSubcategories = ['Hot Coffee', 'Cold Coffee', 'Hot Tea', 'Cold Tea', 'Refreshers', 'Frappuccino', 'Iced Energy', 'Hot Chocolate, Lemonade, and More', 'Bottled Beverages'];
+      
       return (
         <div>
-          {Object.entries(products).map(([subcategoryName, items]) => (
-            items.length > 0 && (
+          {drinkSubcategories.map(subcategoryName => (
+            products[subcategoryName]?.length > 0 && (
               <div key={subcategoryName}>
                 <h2 className="subcategory-title">{subcategoryName}</h2>
                 <div className="products-grid">
-                  {items.map((item, index) => (
+                  {products[subcategoryName].map((item, index) => (
+                    <div key={index} className="product-card">
+                      <div className="product-image-container">
+                        {loadedImages[item.image] && (
+                          <img 
+                            src={loadedImages[item.image]} 
+                            alt={item.name} 
+                            className="product-image" 
+                          />
+                        )}
+                      </div>
+                      <h3 className="product-name">{item.name}</h3>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          ))}
+        </div>
+      );
+    } else if (category === 'Food' && !subcategory) {
+      // Only show food subcategories
+      const foodSubcategories = ['Breakfast', 'Bakery', 'Lunch', 'Treats', 'Snacks'];
+      
+      return (
+        <div>
+          {foodSubcategories.map(subcategoryName => (
+            products[subcategoryName]?.length > 0 && (
+              <div key={subcategoryName}>
+                <h2 className="subcategory-title">{subcategoryName}</h2>
+                <div className="products-grid">
+                  {products[subcategoryName].map((item, index) => (
+                    <div key={index} className="product-card">
+                      <div className="product-image-container">
+                        {loadedImages[item.image] && (
+                          <img 
+                            src={loadedImages[item.image]} 
+                            alt={item.name} 
+                            className="product-image" 
+                          />
+                        )}
+                      </div>
+                      <h3 className="product-name">{item.name}</h3>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          ))}
+        </div>
+      );
+    } else if (category === 'At Home Coffee' && !subcategory) {
+      // Only show at home coffee subcategories
+      const atHomeCoffeeSubcategories = ['Whole Bean', 'VIA Instant', 'Shopping Bag'];
+      
+      return (
+        <div>
+          {atHomeCoffeeSubcategories.map(subcategoryName => (
+            products[subcategoryName]?.length > 0 && (
+              <div key={subcategoryName}>
+                <h2 className="subcategory-title">{subcategoryName}</h2>
+                <div className="products-grid">
+                  {products[subcategoryName].map((item, index) => (
                     <div key={index} className="product-card">
                       <div className="product-image-container">
                         {loadedImages[item.image] && (
