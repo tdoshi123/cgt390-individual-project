@@ -1,12 +1,14 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useTheme } from '../context/ThemeContext'
 import '../styles/Navbar.css'
 import logo from '../assets/images/cosmobucks.webp'
 
 function Navbar() {
   const location = useLocation()
+  const { isLightMode, toggleTheme } = useTheme()
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isLightMode ? 'light' : 'dark'}`}>
       <img src={logo} alt="Cosmobucks Logo" className="navbar-logo" />
       <ul>
         <li>
@@ -34,6 +36,13 @@ function Navbar() {
           </Link>
         </li>
       </ul>
+      <button 
+        onClick={toggleTheme} 
+        className="theme-toggle"
+        aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
+      >
+        {isLightMode ? 'DARK' : 'LIGHT'}
+      </button>
     </nav>
   )
 }

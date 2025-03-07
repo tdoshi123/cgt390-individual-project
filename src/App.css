@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .content {
@@ -48,29 +49,39 @@
 .app {
   width: 100%;
   min-height: 100vh;
-  background-color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  position: relative;
 }
 
 .main-container {
   display: flex;
   width: 100%;
-  min-height: calc(100vh - 92px); /* Add this to ensure main container spans full height */
+  min-height: calc(100vh - 92px);
+  background-color: var(--bg-color);
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    display: block;
+  }
 }
 
 .content {
   flex: 1;
-  padding: 1rem 2rem; /* Reduced top/bottom padding */
+  padding: 1rem 2rem;
 }
 
 .content-header {
   text-align: left;
-  padding-bottom: 0.5rem;    /* Reduced padding */
+  padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   padding-left: 2rem;
 }
 
 .breadcrumb {
-  color: #666;
+  color: var(--breadcrumb-color);
   font-size: 1.1rem;
   margin-top: 0.5rem;
   margin-left: 1rem;
@@ -79,15 +90,15 @@
 
 .breadcrumb-separator {
   margin: 0 0.5rem;
-  color: #666;
+  color: var(--breadcrumb-color);
 }
 
 .content-title {
   text-align: left;
   padding-left: 3rem;
-  margin-top: 0.5rem;    
-  margin-bottom: 0.5rem; /* Added to reduce space below title */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #000;
+  color: var(--text-color);
   font-size: 2rem;
 }
