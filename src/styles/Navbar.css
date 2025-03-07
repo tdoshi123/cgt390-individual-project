@@ -29,6 +29,7 @@
   padding-left: 2rem;
   margin: 0;
   flex-wrap: wrap;
+  flex: 1;
 }
 
 .navbar-link {
@@ -51,8 +52,7 @@
 }
 
 .theme-toggle {
-  position: absolute;
-  right: 2rem;
+  margin-right: 2rem;
   background: none;
   border: 2px solid var(--nav-text);
   border-radius: 4px;
@@ -90,11 +90,16 @@
 /* Add responsive adjustments */
 @media screen and (max-width: 768px) {
   .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 1rem 0.5rem;
+    gap: 1rem;
   }
 
   .navbar-logo {
     margin-left: 0.5rem;
+    height: 50px;
+    width: 50px;
   }
 
   .navbar ul {
@@ -103,8 +108,27 @@
   }
 
   .theme-toggle {
-    right: 0.5rem;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.6rem;  /* Smaller padding */
+    font-size: 0.7rem;      /* Smaller font */
+    min-width: 45px;        /* Ensure minimum width */
+    height: 25px;           /* Control height */
+    display: flex;          /* Center the text */
+    align-items: center;    /* Center the text */
+    justify-content: center; /* Center the text */
+  }
+
+  .navbar-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Add an even smaller breakpoint for very small screens */
+@media screen and (max-width: 390px) {
+  .theme-toggle {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.6rem;
+    min-width: 40px;
+    height: 20px;
   }
 }
