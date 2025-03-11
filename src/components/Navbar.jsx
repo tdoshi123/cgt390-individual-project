@@ -1,25 +1,13 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
-import { useState } from 'react'
+import SearchBar from './SearchBar'
+import LightButton from './LightButton'
 import '../styles/Navbar.css'
 import logo from '../assets/images/cosmobucks.webp'
 
 function Navbar({ onSearch }) {
   const location = useLocation()
-  const navigate = useNavigate()
-  const { isLightMode, toggleTheme } = useTheme()
-  const [searchTerm, setSearchTerm] = useState('')
-
-  const handleSearch = (e) => {
-    const value = e.target.value
-    setSearchTerm(value)
-    
-    if (location.pathname !== '/menu') {
-      navigate('/menu')
-    }
-    
-    onSearch(value)
-  }
+  const { isLightMode } = useTheme()
 
   return (
     <>
@@ -52,37 +40,10 @@ function Navbar({ onSearch }) {
           </li>
         </ul>
         <div className="navbar-right">
-          <div className="search-container desktop-search">
-            <input 
-              type="search" 
-              value={searchTerm}
-              onChange={handleSearch}
-              placeholder="Find a product" 
-              className="search-input"
-              aria-label="Search products"
-            />
-          </div>
-          <button 
-            onClick={toggleTheme} 
-            className="theme-toggle"
-            aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
-          >
-            {isLightMode ? 'DARK' : 'LIGHT'}
-          </button>
+          <SearchBar onSearch={onSearch} />
+          <LightButton />
         </div>
       </nav>
-      <div className="mobile-search-container">
-        <div className="search-container">
-          <input 
-            type="search" 
-            value={searchTerm}
-            onChange={handleSearch}
-            placeholder="Find a product" 
-            className="search-input"
-            aria-label="Search products"
-          />
-        </div>
-      </div>
     </>
   )
 }
