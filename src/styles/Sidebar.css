@@ -9,7 +9,6 @@
   z-index: 1;
 }
 
-/* Dropdown menu for mobile */
 .sidebar-dropdown {
   display: none;
   width: 100%;
@@ -17,6 +16,7 @@
   padding: 1rem;
   box-shadow: 0 2px 4px var(--shadow-color);
   position: relative;
+  z-index: 1;
 }
 
 .dropdown-button {
@@ -33,15 +33,14 @@
 .sidebar-menu.mobile {
   position: absolute;
   top: 100%;
-  left: -1rem; /* Adjust to match the parent's left margin */
-  width: calc(100% + 2rem); /* Adjust width to account for the shift */
+  left: -1rem;
+  width: calc(100% + 2rem);
   background-color: var(--sidebar-bg);
   border: 1px solid var(--sidebar-border);
   box-shadow: 0 2px 4px var(--shadow-color);
   z-index: 1000;
 }
 
-/* Center the menu items */
 .sidebar-menu.mobile .sidebar-item {
   text-align: center;
   padding: 1rem;

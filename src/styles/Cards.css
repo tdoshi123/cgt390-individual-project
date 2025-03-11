@@ -45,11 +45,6 @@
   align-items: center;
   padding: 1rem;
   transition: transform 0.2s;
-  /* Remove these properties:
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--shadow-color);
-  */
 }
 
 .product-card:hover {
@@ -74,7 +69,7 @@
   text-align: center;
   font-size: 1.1rem;
   margin: 0;
-  color: var(--text-color); /* Change this from var(--card-text) to var(--text-color) */
+  color: var(--text-color);
 }
 
 .subcategory-title {

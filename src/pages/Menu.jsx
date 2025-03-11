@@ -6,10 +6,19 @@ import { useState } from 'react'
 function Menu() {
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedSubcategory, setSelectedSubcategory] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleSearch = (term) => {
+    setSearchTerm(term)
+    if (term) {
+      setSelectedCategory('')
+      setSelectedSubcategory('')
+    }
+  }
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar onSearch={handleSearch} />
       <div className="main-container">
         <Sidebar 
           onCategorySelect={setSelectedCategory}
@@ -23,6 +32,8 @@ function Menu() {
               {selectedCategory}
               {selectedSubcategory && <span className="breadcrumb-separator">/</span>}
               {selectedSubcategory}
+              {searchTerm && <span className="breadcrumb-separator">/</span>}
+              {searchTerm && <span>Search: {searchTerm}</span>}
             </span>
           </div>
           {(selectedCategory && !selectedSubcategory) && (
@@ -33,7 +44,8 @@ function Menu() {
           <Cards 
             category={selectedCategory}
             subcategory={selectedSubcategory}
-            showAll={!selectedCategory && !selectedSubcategory}
+            searchTerm={searchTerm}
+            showAll={!selectedCategory && !selectedSubcategory && !searchTerm}
           />
         </div>
       </div>

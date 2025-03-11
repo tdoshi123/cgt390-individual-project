@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import '../styles/Cards.css'
 import products from '../data/products'
 
-// Import all images
 const images = {
   // Hot Coffee
   'caffe-americano': () => import('../assets/images/products/drinks/hotcoffee/caffe-americano.jpg'),
@@ -112,7 +111,7 @@ const images = {
   "small-shopping-bag": () => import('../assets/images/products/athomecoffee/shoppingbag/small-shopping-bag.jpg')
 }
 
-function Cards({ category, subcategory, showAll }) {
+function Cards({ category, subcategory, searchTerm, showAll }) {
   const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
@@ -120,8 +119,19 @@ function Cards({ category, subcategory, showAll }) {
       try {
         const imagesToLoad = {};
         
-        if (showAll || (category && !subcategory)) {
-          // Load all images for the selected category
+        if (searchTerm) {
+          const allProducts = Object.values(products).flat();
+          const filteredProducts = allProducts.filter(product => 
+            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          
+          for (const item of filteredProducts) {
+            if (images[item.image]) {
+              const module = await images[item.image]();
+              imagesToLoad[item.image] = module.default;
+            }
+          }
+        } else if (showAll || (category && !subcategory)) {
           const relevantSubcategories = category === 'Food' 
             ? ['Breakfast', 'Bakery', 'Lunch', 'Treats']
             : Object.keys(products);
@@ -137,7 +147,6 @@ function Cards({ category, subcategory, showAll }) {
             }
           }
         } else if (subcategory && products[subcategory]) {
-          // Load only subcategory images
           for (const item of products[subcategory]) {
             if (images[item.image]) {
               const module = await images[item.image]();
@@ -153,9 +162,50 @@ function Cards({ category, subcategory, showAll }) {
     };
 
     loadImages();
-  }, [category, subcategory, showAll]);
+  }, [category, subcategory, showAll, searchTerm]);
+
+  const filterProducts = () => {
+    if (searchTerm) {
+      const allProducts = Object.values(products).flat();
+      return allProducts.filter(product => 
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    if (showAll) {
+      return null;
+    }
+
+    if (subcategory && products[subcategory]) {
+      return products[subcategory];
+    }
+
+    return [];
+  };
 
   const renderProducts = () => {
+    if (searchTerm) {
+      const filteredProducts = filterProducts();
+      return (
+        <div className="products-grid">
+          {filteredProducts.map((item, index) => (
+            <div key={index} className="product-card">
+              <div className="product-image-container">
+                {loadedImages[item.image] && (
+                  <img 
+                    src={loadedImages[item.image]} 
+                    alt={item.name} 
+                    className="product-image" 
+                  />
+                )}
+              </div>
+              <h3 className="product-name">{item.name}</h3>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
     if (showAll) {
       const categories = {
         'Drinks': ['Hot Coffee', 'Cold Coffee', 'Hot Tea', 'Cold Tea', 'Refreshers', 'Frappuccino', 'Iced Energy', 'Hot Chocolate, Lemonade, and More'],
@@ -196,7 +246,6 @@ function Cards({ category, subcategory, showAll }) {
         </div>
       );
     } else if (category === 'At Home Coffee' && !subcategory) {
-      // Add handling for At Home Coffee category
       const athomeCoffeeSubcategories = ['Whole Bean', 'VIA Instant', 'Shopping Bag'];
       
       return (
@@ -227,7 +276,6 @@ function Cards({ category, subcategory, showAll }) {
         </div>
       );
     } else if (category === 'Drinks' && !subcategory) {
-      // Only show drink subcategories
       const drinkSubcategories = ['Hot Coffee', 'Cold Coffee', 'Hot Tea', 'Cold Tea', 'Refreshers', 'Frappuccino', 'Iced Energy', 'Hot Chocolate, Lemonade, and More'];
       
       return (
@@ -258,7 +306,6 @@ function Cards({ category, subcategory, showAll }) {
         </div>
       );
     } else if (category === 'Food' && !subcategory) {
-      // Only show food subcategories
       const foodSubcategories = ['Breakfast', 'Bakery', 'Lunch', 'Treats'];
       
       return (

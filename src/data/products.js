@@ -1,7 +1,7 @@
 const products = {
   'Hot Coffee': [
     {
-      name: "Caffè Americano",
+      name: "Caffe Americano",
       image: "caffe-americano"
     },
     {
@@ -21,7 +21,7 @@ const products = {
       image: "caramel-macchiato"
     },
     {
-      name: "Caffè Mocha",
+      name: "Caffe Mocha",
       image: "caffe-mocha"
     }
   ],

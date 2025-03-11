@@ -8,7 +8,6 @@ function About() {
         <h1>About Cosmobucks</h1>
         <div className="about-content">
           <p>Welcome to Cosmobucks Coffee Company, where every cup tells a story.</p>
-          {/* Add more content here */}
         </div>
       </div>
     </div>

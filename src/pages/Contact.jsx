@@ -8,7 +8,6 @@ function Contact() {
         <h1>Contact Us</h1>
         <div className="contact-content">
           <p>Get in touch with Cosmobucks</p>
-          {/* Add contact form or information here */}
         </div>
       </div>
     </div>
